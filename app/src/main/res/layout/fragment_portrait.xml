@@ -1,0 +1,136 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dinh.alphafitness.PortraitFragment">
+
+
+    <TextView
+        android:text="Record Workout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView"
+        android:layout_alignBottom="@+id/imageButtonProfile"
+        android:layout_toLeftOf="@+id/imageButtonProfile"
+        android:layout_toStartOf="@+id/imageButtonProfile"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:gravity="center"
+        android:textSize="36sp"
+        android:textStyle="normal|bold" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/profile_icon"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/imageButtonProfile"
+        android:cropToPadding="false" />
+
+    <TableLayout
+        android:id="@+id/tableSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TableRow>
+            <TextView
+                android:text="DISTANCE"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_column="0"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="DURATION"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_column="1"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="0.00"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_column="0"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="normal|bold"
+                android:id="@+id/textViewDistance" />
+
+            <TextView
+                android:text="00:00:00"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_column="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="normal|bold"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:id="@+id/textViewDuration" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Miles"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_column="0"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="Minutes"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_column="1"
+                android:textAlignment="center" />
+        </TableRow>
+
+
+    </TableLayout>
+
+    <com.google.android.gms.maps.MapView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        tools:context="com.example.dinh.alphafitness.MainActivity"
+        android:layout_below="@+id/tableSummary"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/footerLayout"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp" />
+
+    <RelativeLayout
+        android:id="@+id/footerLayout"
+        android:layout_width="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Start Workout"
+            android:layout_centerInParent="true"
+            android:textAllCaps="false"
+            android:id="@+id/startStopWorkout"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:minHeight="17dp" />
+    </RelativeLayout>
+</RelativeLayout>
